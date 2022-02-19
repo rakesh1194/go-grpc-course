@@ -1,3 +1,4 @@
+# Commands that are used to .pb.go files
 # For Greeting Example
 protoc greet/greetpb/greet.proto --go-grpc_out=greet/ greet/greetpb/greet.proto
 
