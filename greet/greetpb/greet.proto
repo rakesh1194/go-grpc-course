@@ -8,6 +8,7 @@ message Greeting {
     string last_name = 2;
 }
 
+// Unary API
 message GreetRequest {
     Greeting greeting = 1;
 }
@@ -16,6 +17,19 @@ message GreetResponse {
     string result = 1;
 }
 
+// Server Streaming API
+message GreetManyTimesRequest {
+    Greeting greeting = 1;
+}
+
+message GreetManyTimesResponse {
+    string result = 1;
+}
+
 service GreetService{
+    // Unary API
     rpc Greet(GreetRequest) returns (GreetResponse) {};
+
+    // Server Streaming API
+    rpc GreeManyTimes(GreetManyTimesRequest) returns (stream GreetManyTimesResponse) {};
 }
